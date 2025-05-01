@@ -1,0 +1,11 @@
+{
+  "name": "OrderId",
+  "namespace": "br.com.coffee.store.generated",
+  "type": "record",
+  "fields": [
+    {
+      "name": "id",
+      "type": "int"
+    }
+  ]
+}

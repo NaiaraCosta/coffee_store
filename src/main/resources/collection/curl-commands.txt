@@ -1,0 +1,20 @@
+POST Coffee Order Event
+-----------------------
+curl -i \
+-d '{"id":"a27d9492-1402-48d6-9bf7-2c59c76e8a34","name":"Naiara Costa","nickName":"","store":{"id":123,"address":{"address":"193 Guaira Street","city":"São José dos Pinhais","state":"PR","country":"BR","zip":"83030-590"}},"orderLineItems":[{"name":"Latte","size":"MEDIUM","quantity":1,"cost":3.99}],"pickUp":"IN_STORE","orderedTime":"2025-04-25T09:22:28","status":"NEW"}' \
+-H "Content-Type: application/json" \
+-X POST http://localhost:8082/v1/coffee_orders
+
+curl -i \
+-d '{"id":"","name":"Naiara Costa","nickName":"","store":{"id":123,"address":{"address":"193 Guaira Street","city":"São José dos Pinhais","state":"PR","country":"BR","zip":"83030-590"}},"orderLineItems":[{"name":"Latte","size":"MEDIUM","quantity":1,"cost":3.99}],"pickUp":"IN_STORE","orderedTime":"2025-04-25T09:22:28","status":"NEW"}' \
+-H "Content-Type: application/json" \
+-X POST http://localhost:8082/v1/coffee_orders
+
+
+
+PUT Coffee Order UPDATE Event
+-----------------------
+curl -i \
+-d '{"orderStatus":"PROCESSING"}' \
+-H "Content-Type: application/json" \
+-X PUT http://localhost:8082/v1/coffee_orders/fa0c2268-d3a7-418e-8475-ad8923745d6c

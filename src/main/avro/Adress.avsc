@@ -1,0 +1,28 @@
+{
+  "name": "Address",
+  "namespace": "br.com.coffee.store.generated",
+  "type": "record",
+  "fields": [
+    {
+      "name": "address",
+      "type": "string"
+    },
+    {
+      "name": "city",
+      "type": "string"
+    },
+    {
+      "name": "state",
+      "type": "string"
+    },
+    {
+      "name": "country",
+      "type": "string",
+      "default": "BR"
+    },
+    {
+      "name": "zip",
+      "type": "string"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+server:
+  port: 8082
+spring:
+  profiles:
+    active: local
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  kafka:
+    template:
+      default-topic: coffee-orders
+    consumer:
+      bootstrap-servers: localhost:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      group-id: coffee-orders-listener-group
+      auto-offset-reset: latest
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+    properties:
+      schema:
+        registry:
+          url: http://localhost:8081
+      value:
+        subject:
+          name:
+            strategy: io.confluent.kafka.serializers.subject.RecordNameStrategy
